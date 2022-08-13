@@ -19,3 +19,8 @@ sudo echo "DISPLAY_LEVEL 1" | sudo tee /dev/rshim0/misc
 sudo cp ~/cloudlab-bootstrap/01-netcfg.yaml /etc/netplan
 sudo systemctl restart systemd-networkd
 sudo netplan apply
+
+sudo wget https://content.mellanox.com/BlueField/BFBs/Ubuntu20.04/DOCA_v1.0_BlueField_OS_Ubuntu_20.04-5.3-1.0.0.0-3.6.0.11699-1-aarch64.bfb
+sudo cp ~/cloudlab-bootstrap/bf.cfg ~
+apt-get install pv
+bfb-install --rshim /dev/rshim0 --bfb DOCA_v1.0_BlueField_OS_Ubuntu_20.04–5.3–1.0.0.0–3.6.0.11699–1-aarch64.bfb --config bf.cfg

@@ -17,3 +17,5 @@ wget https://git.dpdk.org/apps/pktgen-dpdk/snapshot/pktgen-dpdk-pktgen-21.02.0.t
 tar -xJvf pktgen-dpdk-pktgen-21.02.0.tar.xz
 make
 make install
+
+echo 1024 | sudo tee /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages

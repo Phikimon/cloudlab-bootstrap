@@ -1,3 +1,7 @@
+sudo apt update
+sudo apt install libnuma-dev python3-pyelftools
+sudo apt install meson ninja
+
 cd /opt
 wget https://fast.dpdk.org/rel/dpdk-20.11.1.tar.xz
 tar -xJvf dpdk-20.11.1.tar.xz

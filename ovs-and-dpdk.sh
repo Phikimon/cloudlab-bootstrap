@@ -1,10 +1,10 @@
 cd /usr/src/
 sudo wget https://fast.dpdk.org/rel/dpdk-21.11.2.tar.xz
 sudo tar xf dpdk-21.11.2.tar.xz
-sudo export DPDK_DIR=/usr/src/dpdk-stable-21.11.2
-sudo cd $DPDK_DIR
+export DPDK_DIR=/usr/src/dpdk-stable-21.11.2
+cd $DPDK_DIR
 
-sudo export DPDK_BUILD=$DPDK_DIR/build
+export DPDK_BUILD=$DPDK_DIR/build
 sudo meson build
 sudo ninja -C build
 sudo ninja -C build install
@@ -15,6 +15,20 @@ sudo wget https://www.openvswitch.org/releases/openvswitch-2.17.3.tar.gz
 sudo tar -xf openvswitch-2.17.3.tar.gz
 cd openvswitch-2.17.3
 sudo ./boot.sh
-sudo ./configure.sh --with-dpdk=static
+sudo ./configure --with-dpdk=static
 sudo make
 sudo make install
+
+export PATH=$PATH:/usr/local/share/openvswitch/scripts
+sudo ovs-ctl start
+
+sudo mkdir -p /usr/local/etc/openvswitch
+sudo ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema
+
+sudo mkdir -p /usr/local/var/run/openvswitch
+sudo ovsdb-server --remote=punix:/usr/local/var/run/openvswitch/db.sock \
+    --remote=db:Open_vSwitch,Open_vSwitch,manager_options \
+    --private-key=db:Open_vSwitch,SSL,private_key \
+    --certificate=db:Open_vSwitch,SSL,certificate \
+    --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert \
+    --pidfile --detach --log-file

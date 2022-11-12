@@ -1,3 +1,7 @@
+sudo apt update
+sudo apt install libnuma-dev python3-pyelftools
+sudo apt install meson ninja-build
+
 cd /usr/src/
 sudo wget https://fast.dpdk.org/rel/dpdk-21.11.2.tar.xz
 sudo tar xf dpdk-21.11.2.tar.xz
@@ -19,6 +23,9 @@ sudo ./configure --with-dpdk=static
 sudo make
 sudo make install
 
+sudo mkdir -p /var/log/openvswitch
+sudo touch /var/log/openvswitch/ovs-vswitch.log
+
 export PATH=$PATH:/usr/local/share/openvswitch/scripts
 sudo ovs-ctl start
 
@@ -32,3 +39,6 @@ sudo ovsdb-server --remote=punix:/usr/local/var/run/openvswitch/db.sock \
     --certificate=db:Open_vSwitch,SSL,certificate \
     --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert \
     --pidfile --detach --log-file
+
+sudo ovs-vsctl --no-wait init
+sudo ovs-vswitchd --pidfile --detach --log-file

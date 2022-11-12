@@ -24,10 +24,10 @@ sudo make
 sudo make install
 
 sudo mkdir -p /var/log/openvswitch
-sudo touch /var/log/openvswitch/ovs-vswitch.log
+sudo touch /usr/local/var/log/openvswitch/ovs-vswitch.log
 
 export PATH=$PATH:/usr/local/share/openvswitch/scripts
-sudo ovs-ctl start
+ovs-ctl start
 
 sudo mkdir -p /usr/local/etc/openvswitch
 sudo ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema

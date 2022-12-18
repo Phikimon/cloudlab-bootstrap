@@ -19,6 +19,9 @@ cd pktgen-dpdk-pktgen-21.02.0
 make
 make install
 
-sudo cp /opt/pktgen-dpdk-pktgen-21.02.0/usr/local/bin/pktgen /usr/local/bin
+cd /opt/pktgen-dpdk-pktgen-21.02.0/Builddir
+sudo ninja install
+
+cd ~
 
 echo 1024 | sudo tee /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages

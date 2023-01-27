@@ -1,3 +1,6 @@
+#!/usr/bin/bash
+# Installs DPDK and Pktgen on an x86 machine
+
 sudo apt update
 sudo apt install libnuma-dev python3-pyelftools
 sudo apt install meson ninja-build
@@ -12,6 +15,7 @@ meson -Dexamples=all build
 ninja -C build
 ninja -C build install
 ldconfig
+
 cd ..
 wget https://git.dpdk.org/apps/pktgen-dpdk/snapshot/pktgen-dpdk-pktgen-21.02.0.tar.xz
 tar -xJvf pktgen-dpdk-pktgen-21.02.0.tar.xz

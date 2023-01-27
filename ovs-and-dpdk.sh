@@ -1,3 +1,6 @@
+#!/usr/bin/bash
+# Installs DPDK and OvS with DPDK support on an x86 machine
+
 sudo apt update
 sudo apt install libnuma-dev python3-pyelftools
 sudo apt install meson ninja-build

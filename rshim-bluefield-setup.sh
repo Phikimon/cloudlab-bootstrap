@@ -1,5 +1,6 @@
 #!/bin/bash
-# Setup rshim and other things for BlueField
+# Setup rshim, as well as forwarding for the BlueField, so that we can access the internet
+# from within the Arm cores.
 
 sudo systemctl enable rshim
 sudo systemctl start rshim
@@ -14,4 +15,3 @@ sudo echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 sudo iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE
 sudo iptables -A FORWARD -o eno1 -j ACCEPT
 sudo iptables -A FORWARD -m state --state ESTABLISHED,RELATED -i eno1 -j ACCEPT
-

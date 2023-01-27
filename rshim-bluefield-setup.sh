@@ -1,6 +1,7 @@
 #!/bin/bash
 # Setup rshim, as well as forwarding for the BlueField, so that we can access the internet
-# from within the Arm cores.
+# from within the Arm cores. This script is meant to be run after reinstalling the OS 
+# on the BlueField (e.g., with the os-install.sh script)
 
 sudo systemctl enable rshim
 sudo systemctl start rshim

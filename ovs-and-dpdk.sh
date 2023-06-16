@@ -6,9 +6,9 @@ sudo apt install libnuma-dev python3-pyelftools
 sudo apt install meson ninja-build
 
 cd /usr/src/
-sudo wget https://fast.dpdk.org/rel/dpdk-21.11.2.tar.xz
-sudo tar xf dpdk-21.11.2.tar.xz
-export DPDK_DIR=/usr/src/dpdk-stable-21.11.2
+sudo wget https://fast.dpdk.org/rel/dpdk-22.11.2.tar.xz
+sudo tar xf dpdk-22.11.2.tar.xz
+export DPDK_DIR=/usr/src/dpdk-stable-22.11.2
 cd $DPDK_DIR
 
 export DPDK_BUILD=$DPDK_DIR/build

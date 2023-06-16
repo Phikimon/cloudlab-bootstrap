@@ -9,14 +9,16 @@ This is the rough order the scripts are meant to be run, when starting with a fr
 
 ## On the host
 
-1. `mellanox-setup.sh`. This installs `MLNX_OFED`, which also gives us the `rshim` driver. 
-2. `rshim-bluefield-setup.sh`. Ensures rshim is up and running. Configures packet forwarding to the BlueField so that the BlueField can access the internet.
+1. `mellanox-setup.sh`. This installs `MLNX_OFED`, which also gives us the `rshim` driver.\*
+2. `rshim-bluefield-setup.sh`. Ensures rshim is up and running. Configures packet forwarding to the BlueField so that the BlueField can access the internet.\*
 3. `os-install.sh`. Installs ubuntu on the BlueField (username `ubuntu`, password `Ubuntu1!`). Re-installing the OS might not be necessary.
-4. If DPDK/Pktgen is needed, `dpdk-and-pktgen-x86-install.sh`.
+4. If DPDK/Pktgen is needed, `dpdk-and-pktgen-x86-install.sh`.\*
+
+\*This item is already done by smartnic\_bootstrap.sh from repo mentioned above.
 
 ## In the BlueField
 
-Once we can ssh into the BlueField, we can install DPDK/Pktgen there: `dpdk-and-pktgen-arm-install.sh`. 
+Once we can ssh into the BlueField, we can install DPDK/Pktgen there: `dpdk-and-pktgen-arm-install.sh`.
 
 # Other scripts
 

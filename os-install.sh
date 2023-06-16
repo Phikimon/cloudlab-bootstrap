@@ -1,5 +1,5 @@
 #!/bin/bash
-# Reinstalls the OS on the BlueField. 
+# Reinstalls the OS on the BlueField.
 # SSH Username: ubuntu
 # Password: Ubuntu1!
 

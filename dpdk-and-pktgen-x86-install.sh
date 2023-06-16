@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 # Installs DPDK and Pktgen on an x86 machine
+set -x
 
-sudo apt update
-sudo apt install libnuma-dev python3-pyelftools
-sudo apt install meson ninja-build
-sudo apt install liblua5.3-dev
+sudo apt update -y
+sudo apt install -y libnuma-dev python3-pyelftools meson ninja-build liblua5.3-dev
+sudo apt install -y liblua5.3-dev
 
 cd /opt
 sudo wget https://fast.dpdk.org/rel/dpdk-22.11.2.tar.xz

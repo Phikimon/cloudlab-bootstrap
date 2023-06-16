@@ -1,9 +1,8 @@
 #!/usr/bin/bash
 # Installs DPDK and Pktgen on an Arm machine
 
-sudo apt update
-sudo apt install libnuma-dev python3-pyelftools
-sudo apt install meson ninja-build
+sudo apt update -y
+sudo apt install -y libnuma-dev python3-pyelftools meson ninja-build
 
 cd /opt
 sudo wget https://fast.dpdk.org/rel/dpdk-22.11.2.tar.xz

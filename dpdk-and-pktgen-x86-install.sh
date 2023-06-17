@@ -4,7 +4,6 @@ set -x
 
 sudo apt update -y
 sudo apt install -y libnuma-dev python3-pyelftools meson ninja-build liblua5.3-dev
-sudo apt install -y liblua5.3-dev
 
 cd /opt
 sudo wget https://fast.dpdk.org/rel/dpdk-22.11.2.tar.xz
@@ -21,7 +20,7 @@ cd ..
 sudo wget https://git.dpdk.org/apps/pktgen-dpdk/snapshot/pktgen-dpdk-pktgen-23.06.1.tar.xz
 sudo tar -xJvf pktgen-dpdk-pktgen-23.06.1.tar.xz
 cd pktgen-dpdk-pktgen-23.06.1/
-sudo make
+sudo make buildlua
 sudo ldconfig
 
 cd Builddir/

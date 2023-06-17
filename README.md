@@ -18,7 +18,10 @@ This is the rough order the scripts are meant to be run, when starting with a fr
 
 ## In the BlueField
 
-Once we can ssh into the BlueField, we can install DPDK/Pktgen there: `dpdk-and-pktgen-arm-install.sh`.
+Once we can ssh into the BlueField, we can install DPDK/Pktgen there: `dpdk-and-pktgen-arm-install.sh`. If domain name resolution does not work, run
+```bash
+$ echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
+```
 
 # Other scripts
 

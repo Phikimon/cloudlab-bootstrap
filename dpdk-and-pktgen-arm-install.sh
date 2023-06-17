@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 # Installs DPDK and Pktgen on an Arm machine
+set -x
 
 sudo apt update -y
 sudo apt install -y libnuma-dev python3-pyelftools meson ninja-build

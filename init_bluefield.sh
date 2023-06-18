@@ -13,3 +13,6 @@ git clone https://github.com/Phikimon/dot_files/
 mv ./dot_files/.vimrc .
 echo "export VISUAL=vim" | tee -a ~/.bashrc
 echo "export EDITOR=vim" | tee -a ~/.bashrc
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+

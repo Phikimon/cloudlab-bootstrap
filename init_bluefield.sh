@@ -16,3 +16,7 @@ echo "export EDITOR=vim" | tee -a ~/.bashrc
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
+# There is not enough space even without tex...
+sudo apt remove texlive* inkscape x11-utils x11-common
+sudo apt autoremove
+

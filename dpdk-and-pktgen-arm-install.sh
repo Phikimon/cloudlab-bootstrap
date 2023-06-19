@@ -11,7 +11,7 @@ sudo tar -xJvf dpdk-22.11.2.tar.xz
 cd dpdk-stable-22.11.2
 export RTE_SDK=/opt/dpdk-stable-22.11.2
 export RTE_TARGET=arm64-armv8a-linuxapp-gcc
-meson --buildtype=debug -Dexamples=all build
+meson -Ddisable_drivers=event/*,net/tap --buildtype=debug -Dexamples=l2fwd build
 ninja -C build
 ninja -C build install
 ldconfig

@@ -12,13 +12,17 @@ cd ~
 sudo systemctl stop unattended-upgrades
 sudo apt remove unattended-upgrades
 git clone https://github.com/Phikimon/dot_files/
-mv ./dot_files/.vimrc .
+mv ./dot_files/.vimrc ~
 echo "export VISUAL=vim" | tee -a ~/.bashrc
 echo "export EDITOR=vim" | tee -a ~/.bashrc
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
 # There is not enough space even without tex...
-sudo apt remove texlive* inkscape x11-utils x11-common
-sudo apt autoremove
+sudo apt remove -y texlive* inkscape x11-utils x11-common
+sudo apt autoremove -y
 
+echo -1 | sudo tee /proc/sys/kernel/sched_rt_runtime_us
+ethtool -A p0 rx off tx off
+ethtool -A p1 rx off tx off
+echo 1024 | sudo tee /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages

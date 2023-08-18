@@ -3,7 +3,7 @@
 set -x
 
 sudo apt update -y
-sudo apt install -y libnuma-dev python3-pyelftools meson ninja-build liblua5.3-dev
+sudo apt install -y libnuma-dev python3-pyelftools meson ninja-build liblua5.3-dev libcjson-dev
 
 cd /opt
 sudo wget https://fast.dpdk.org/rel/dpdk-22.11.2.tar.xz

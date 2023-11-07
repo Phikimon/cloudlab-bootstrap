@@ -17,9 +17,9 @@ ninja -C build install
 ldconfig
 
 cd ..
-sudo wget https://git.dpdk.org/apps/pktgen-dpdk/snapshot/pktgen-dpdk-pktgen-23.06.1.tar.xz
-sudo tar -xJvf pktgen-dpdk-pktgen-23.06.1.tar.xz
-cd pktgen-dpdk-pktgen-23.06.1/
+sudo git clone https://github.com/Phikimon/Pktgen-DPDK
+cd Pktgen-DPDK
+sudo git checkout tune_range
 sudo make buildlua
 sudo ldconfig
 

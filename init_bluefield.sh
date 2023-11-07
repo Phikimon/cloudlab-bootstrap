@@ -10,7 +10,7 @@ set -x
 # echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
 cd ~
 sudo systemctl stop unattended-upgrades
-sudo apt remove unattended-upgrades
+sudo apt remove -y unattended-upgrades
 git clone https://github.com/Phikimon/dot_files/
 mv ./dot_files/.vimrc ~
 echo "export VISUAL=vim" | tee -a ~/.bashrc
